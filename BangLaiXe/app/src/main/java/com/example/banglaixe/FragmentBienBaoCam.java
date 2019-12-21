@@ -10,7 +10,29 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class FragmentBienBaoCam extends Fragment {
+    public String LoaiBienBao;
+    public String NoiDungBienBao;
+    public Integer Hinh;
+
+    public FragmentBienBaoCam(String loaiBienBao, String noiDungBienBao, Integer hinh) {
+        LoaiBienBao = loaiBienBao;
+        NoiDungBienBao = noiDungBienBao;
+        Hinh = hinh;
+    }
+
+    public FragmentBienBaoCam(int contentLayoutId, String loaiBienBao, String noiDungBienBao, Integer hinh) {
+        super(contentLayoutId);
+        LoaiBienBao = loaiBienBao;
+        NoiDungBienBao = noiDungBienBao;
+        Hinh = hinh;
+    }
+
     private View mRootView;
+
+    public FragmentBienBaoCam() {
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
