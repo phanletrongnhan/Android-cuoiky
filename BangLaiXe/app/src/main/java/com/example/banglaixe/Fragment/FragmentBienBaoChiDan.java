@@ -1,4 +1,4 @@
-package com.example.banglaixe;
+package com.example.banglaixe.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class FragmentVachKeDuong extends Fragment {
-    private View mRootView;
+import com.example.banglaixe.R;
 
+public class FragmentBienBaoChiDan extends Fragment {
+    private View mRootView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_vach_ke_duong, container, false);
+        mRootView = inflater.inflate(R.layout.fragment_bien_bao_chi_dan, container, false);
         return mRootView;
     }
 }

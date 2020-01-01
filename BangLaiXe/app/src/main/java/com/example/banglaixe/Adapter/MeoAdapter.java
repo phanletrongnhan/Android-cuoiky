@@ -1,10 +1,13 @@
-package com.example.banglaixe;
+package com.example.banglaixe.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+
+import com.example.banglaixe.Fragment.FragmentMeoThiLyThuyet;
+import com.example.banglaixe.Fragment.FragmentMeoThiThucHanh;
 
 public class MeoAdapter extends FragmentStatePagerAdapter {
     private String listTab[] = {"MẸO THI LÝ THUYẾT","MẸO THI THỰC HÀNH"};

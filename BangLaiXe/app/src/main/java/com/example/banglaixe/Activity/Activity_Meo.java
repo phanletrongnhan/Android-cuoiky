@@ -1,4 +1,4 @@
-package com.example.banglaixe;
+package com.example.banglaixe.Activity;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.banglaixe.Adapter.MeoAdapter;
+import com.example.banglaixe.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class Activity_Meo extends AppCompatActivity {

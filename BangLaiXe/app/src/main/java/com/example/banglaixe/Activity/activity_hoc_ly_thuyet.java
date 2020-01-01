@@ -1,4 +1,4 @@
-package com.example.banglaixe;
+package com.example.banglaixe.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.banglaixe.R;
 
 public class activity_hoc_ly_thuyet extends AppCompatActivity {
     ListView listView;
