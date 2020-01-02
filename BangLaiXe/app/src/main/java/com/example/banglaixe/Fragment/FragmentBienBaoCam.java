@@ -27,7 +27,7 @@ public class FragmentBienBaoCam extends Fragment {
     private String NoiDung;
     private Drawable image;
 
-    public FragmentBienBaoCam() {
+    public FragmentBienBaoCam(int anInt, String string, String cursorString, byte[] blob) {
     }
 
     public FragmentBienBaoCam(int id, String loaiBienBao, String noiDung, Drawable Image, View mRootView) {
@@ -87,6 +87,8 @@ public class FragmentBienBaoCam extends Fragment {
 
         database.QueryData("CREATE TABLE IF NOT EXISTS FragmentBienBaoCam(Id INTEGER PRIMARY KEY AUTOINCREMENT, LoaiBienBao VARCHAR(150), NoiDung VARCHAR(250), HinhAnh BLOB)");
 
+
+
         lvBienBao = (ListView) view.findViewById(R.id.listviewBienBaoCam);
         arrayBienBaoCam = new ArrayList<>();
 
@@ -102,5 +104,6 @@ public class FragmentBienBaoCam extends Fragment {
                     cursor.getBlob(3)
             ));
         }
+        adapter.notifyDataSetChanged();
     }
 }
