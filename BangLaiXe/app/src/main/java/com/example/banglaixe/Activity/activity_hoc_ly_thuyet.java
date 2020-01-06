@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.banglaixe.Fragment.FragmentLyThuyetHeThong;
+import com.example.banglaixe.Fragment.FragmentLyThuyetKNQT;
+import com.example.banglaixe.Fragment.FragmentLyThuyetVanHoaDaoDuc;
 import com.example.banglaixe.R;
 
 public class activity_hoc_ly_thuyet extends AppCompatActivity {
@@ -35,9 +40,21 @@ public class activity_hoc_ly_thuyet extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+//                if(position ==  0) {
+//                    Toast.makeText(getApplicationContext(),"0",Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(activity_hoc_ly_thuyet.this, Activity_ThiSatHach.class);
+//                    startActivity(intent);
+//                }else if(position == 1){Toast.makeText(getApplicationContext(),"1",Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(activity_hoc_ly_thuyet.this, FragmentLyThuyetHeThong.class);
+//                    startActivity(intent);
+//                }else if(position == 2){
+//                    Intent intent = new Intent(activity_hoc_ly_thuyet.this, FragmentLyThuyetVanHoaDaoDuc.class);
+//                    startActivity(intent);
+//                }
+             Toast.makeText(activity_hoc_ly_thuyet.this,position+"",Toast.LENGTH_SHORT).show();
             }
         });
+
 
     }
     class myAdapter extends ArrayAdapter<String>{
