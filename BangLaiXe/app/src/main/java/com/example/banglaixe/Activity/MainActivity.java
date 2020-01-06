@@ -17,10 +17,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-//    public void HLT_click(View view) {
-//        Intent intent = new Intent(MainActivity.this, activity_hoc_ly_thuyet.class);
-//        startActivity(intent);
-//    }
+    public void HLT_click(View view) {
+        Intent intent = new Intent(MainActivity.this, activity_hoc_ly_thuyet.class);
+        startActivity(intent);
+    }
 
     public void TSH_click(View view) {
         Intent intent = new Intent(MainActivity.this, Activity_ThiSatHach.class);
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void M_click(View view) {
         Intent intent = new Intent(MainActivity.this, Activity_Meo.class);
-        Toast.makeText(getApplicationContext(),"hsdaasd",Toast.LENGTH_SHORT).show();
+
         startActivity(intent);
     }
 }
