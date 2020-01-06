@@ -19,9 +19,9 @@ import com.example.banglaixe.R;
 public class FragmentVachKeDuong extends Fragment {
     ListView lvVachKeDuong;
     String VachKe[]={"Vạch nằm đứng 1", "Vạch nằm đứng 2", "Vạch nằm đứng 4", "Vạch nằm đứng 7", "Vạch nằm ngang 2", "Vạch nằm ngang 16.1"};
-    String NDVK[]={"Xác định các bộ phận thẳng đứng của các công trình giao thông như trụ cầu, cầu vượt đường,...để chỉ dẫn những chỗ nguy hiểm đối với phương tiện giao thông đi qua.","" +
-            "Là vạch trắng đen xen kẽ thẳng đứng, xác định cạnh dưới cùng của cầu và cầu vượt đường.", "Là vạch xiên góc màu đen tạo với mặt phẳng ngang góc 30 độ rộng 0,15m dùng để kẻ trên các cột tín hiệu, cột rào chắn.","" +
-            "Vạch liền, màu trắng, rộng 20cm, dùng để xác định mép phần xe chạy trên các trục đường. Xe chạy được phép cắt ngang hoặc đè lên vạch khi cần thiết.","" +
+    String NDVK[]={"Xác định các bộ phận thẳng đứng của các công trình giao thông như trụ cầu, cầu vượt đường,...để chỉ dẫn những chỗ nguy hiểm đối với phương tiện giao thông đi qua.",
+            "Là vạch trắng đen xen kẽ thẳng đứng, xác định cạnh dưới cùng của cầu và cầu vượt đường.", "Là vạch xiên góc màu đen tạo với mặt phẳng ngang góc 30 độ rộng 0,15m dùng để kẻ trên các cột tín hiệu, cột rào chắn.",
+            "Vạch liền, màu trắng, rộng 20cm, dùng để xác định mép phần xe chạy trên các trục đường. Xe chạy được phép cắt ngang hoặc đè lên vạch khi cần thiết.",
             "Ngựa vằn màu trắng, xác định đảo phân chia dòng phương tiện ngược chiều nhau."};
     int KIMG[]={R.drawable.vach_dung_1, R.drawable.vach_nam_dung_2, R.drawable.vach_nam_dung_4, R.drawable.vach_nam_dung_7, R.drawable.vach_nam_ngang_2, R.drawable.vach_nam_ngang_161};
 
@@ -56,7 +56,6 @@ public class FragmentVachKeDuong extends Fragment {
             myNoiDung.setText(NDVK[position]);
 
             return row;
-
         }
     }
 
