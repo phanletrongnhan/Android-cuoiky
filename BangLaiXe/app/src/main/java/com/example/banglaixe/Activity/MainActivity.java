@@ -34,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void M_click(View view) {
         Intent intent = new Intent(MainActivity.this, Activity_Meo.class);
-        Toast.makeText(getApplicationContext(),"dasdytsardyqwrdfasdsdasad",Toast.LENGTH_SHORT);
+
+        Toast.makeText(getApplicationContext(),"hsdaasd",Toast.LENGTH_SHORT).show();
+
         startActivity(intent);
     }
 }
