@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity_Meo">
+    tools:context=".Activity.Activity_Meo">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/meoTabLayout"

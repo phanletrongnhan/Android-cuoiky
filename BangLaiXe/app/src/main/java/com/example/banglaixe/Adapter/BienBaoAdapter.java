@@ -6,12 +6,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.banglaixe.Fragment.FragmentBienBaoCam;
-import com.example.banglaixe.Fragment.FragmentBienBaoChiDan;
-import com.example.banglaixe.Fragment.FragmentBienBaoHieuLenh;
-import com.example.banglaixe.Fragment.FragmentBienBaoNguyHiem;
-import com.example.banglaixe.Fragment.FragmentBienBaoPhu;
-import com.example.banglaixe.Fragment.FragmentVachKeDuong;
+import com.example.banglaixe.FragmentBienBaoCam;
+import com.example.banglaixe.FragmentBienBaoChiDan;
+import com.example.banglaixe.FragmentBienBaoHieuLenh;
+import com.example.banglaixe.FragmentBienBaoNguyHiem;
+import com.example.banglaixe.FragmentBienBaoPhu;
+import com.example.banglaixe.FragmentVachKeDuong;
 
 public class BienBaoAdapter extends FragmentStatePagerAdapter {
     private String listTab[] = {"BIỂN BÁO CẤM","BIỂN BÁO NGUY HIỂM","BIỂN BÁO HIỆU LỆNH","BIỂN BÁO CHỈ DẪN","BIỂN BÁO PHỤ","VẠCH KẺ ĐƯỜNG"};

@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,12 +36,12 @@ public class activity_hoc_ly_thuyet extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Intent intent = new Intent(activity_hoc_ly_thuyet.this , Activity_ThiSatHach.class);
             }
         });
 
     }
-    class myAdapter extends ArrayAdapter<String>{
+    public class myAdapter extends ArrayAdapter<String>{
         Context context;
         String aTitle[];
         String aQuestion[];
