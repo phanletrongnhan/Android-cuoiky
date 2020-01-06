@@ -1,16 +1,12 @@
 package com.example.banglaixe.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.example.banglaixe.Adapter.BienBaoAdapter;
 import com.example.banglaixe.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 public class Activity_BienBao extends AppCompatActivity {
