@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.banglaixe.Fragment.FragmentMeoThiLyThuyet;
-import com.example.banglaixe.Fragment.FragmentMeoThiThucHanh;
+import com.example.banglaixe.FragmentMeoThiLyThuyet;
+import com.example.banglaixe.FragmentMeoThiThucHanh;
 
 public class MeoAdapter extends FragmentStatePagerAdapter {
     private String listTab[] = {"MẸO THI LÝ THUYẾT","MẸO THI THỰC HÀNH"};

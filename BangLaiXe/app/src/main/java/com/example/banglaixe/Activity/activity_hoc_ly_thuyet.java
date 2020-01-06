@@ -40,6 +40,7 @@ public class activity_hoc_ly_thuyet extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+<<<<<<< HEAD
 //                if(position ==  0) {
 //                    Toast.makeText(getApplicationContext(),"0",Toast.LENGTH_SHORT).show();
 //                    Intent intent = new Intent(activity_hoc_ly_thuyet.this, Activity_ThiSatHach.class);
@@ -52,12 +53,15 @@ public class activity_hoc_ly_thuyet extends AppCompatActivity {
 //                    startActivity(intent);
 //                }
              Toast.makeText(activity_hoc_ly_thuyet.this,position+"",Toast.LENGTH_SHORT).show();
+=======
+                Intent intent = new Intent(activity_hoc_ly_thuyet.this , Activity_ThiSatHach.class);
+>>>>>>> 0084688ebd5bc0ccb54769b207f878fad6c02568
             }
         });
 
 
     }
-    class myAdapter extends ArrayAdapter<String>{
+    public class myAdapter extends ArrayAdapter<String>{
         Context context;
         String aTitle[];
         String aQuestion[];
