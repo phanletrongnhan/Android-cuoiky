@@ -10,8 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.banglaixe.Adapter.MeoThucHanhAdapter;
-
 import java.util.ArrayList;
 
 public class FragmentMeoThiThucHanh extends Fragment {

@@ -1,4 +1,4 @@
-package com.example.banglaixe.Activity;
+package com.example.banglaixe;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +8,6 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.banglaixe.Adapter.BienBaoAdapter;
-import com.example.banglaixe.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 

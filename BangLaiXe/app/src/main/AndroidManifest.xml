@@ -13,18 +13,18 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ThiSatHachD1"></activity>
         <activity
-            android:name=".Activity.Activity_BienBao"
-            android:parentActivityName=".Activity.MainActivity" />
+            android:name=".Activity_BienBao"
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Activity.Activity_Meo"
-            android:parentActivityName=".Activity.MainActivity" />
+            android:name=".Activity_Meo"
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Activity.Activity_ThiSatHach"
-            android:parentActivityName=".Activity.MainActivity" />
+            android:name=".Activity_ThiSatHach"
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Activity.activity_hoc_ly_thuyet"
-            android:parentActivityName=".Activity.MainActivity" />
-        <activity android:name=".Activity.MainActivity">
+            android:name=".activity_hoc_ly_thuyet"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
