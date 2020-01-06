@@ -18,10 +18,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="6dp"
-        android:layout_toEndOf="@+id/imageBienBaoChiDan"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="19dp"
         android:text="Biển báo"
+        android:layout_toRightOf="@id/imageBienBaoChiDan"
         android:textColor="#000000"
         android:textStyle="bold" />
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewBienBaoCD"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_toEndOf="@+id/imageBienBaoChiDan"
         android:text="Nội dung"
         android:textColor="#8F8888" />

@@ -60,12 +60,12 @@ public class FragmentBienBaoPhu extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_bien_bao_phu, container, false);
+        mRootView = inflater.inflate(R.layout.header_bienbaophu, container, false);
         return mRootView;
     }
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        lvBienBaoPhu = getActivity().findViewById(R.id.lvBienBaoCam);
+        lvBienBaoPhu = getActivity().findViewById(R.id.lvBienBaoPhu);
         FragmentBienBaoPhu.myAdapter adapter = new myAdapter(getContext(), Phu, BaoPhu, PIMG);
         lvBienBaoPhu.setAdapter(adapter);
 

@@ -23,7 +23,7 @@ public class FragmentVachKeDuong extends Fragment {
             "Là vạch trắng đen xen kẽ thẳng đứng, xác định cạnh dưới cùng của cầu và cầu vượt đường.", "Là vạch xiên góc màu đen tạo với mặt phẳng ngang góc 30 độ rộng 0,15m dùng để kẻ trên các cột tín hiệu, cột rào chắn.","" +
             "Vạch liền, màu trắng, rộng 20cm, dùng để xác định mép phần xe chạy trên các trục đường. Xe chạy được phép cắt ngang hoặc đè lên vạch khi cần thiết.","" +
             "Ngựa vằn màu trắng, xác định đảo phân chia dòng phương tiện ngược chiều nhau."};
-    int KIMG[]={};
+    int KIMG[]={R.drawable.vach_dung_1, R.drawable.vach_nam_dung_2, R.drawable.vach_nam_dung_4, R.drawable.vach_nam_dung_7, R.drawable.vach_nam_ngang_2, R.drawable.vach_nam_ngang_161};
 
     private View mRootView;
 
@@ -63,12 +63,12 @@ public class FragmentVachKeDuong extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_vach_ke_duong, container, false);
+        mRootView = inflater.inflate(R.layout.header_vachkeduong, container, false);
         return mRootView;
     }
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        lvVachKeDuong = getActivity().findViewById(R.id.lvBienBaoCam);
+        lvVachKeDuong = getActivity().findViewById(R.id.lvVachKeDuong);
         FragmentVachKeDuong.myAdapter adapter = new myAdapter(getContext(), VachKe, NDVK, KIMG);
         lvVachKeDuong.setAdapter(adapter);
     }

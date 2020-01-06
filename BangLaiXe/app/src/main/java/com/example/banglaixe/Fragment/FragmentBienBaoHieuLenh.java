@@ -60,7 +60,7 @@ public class FragmentBienBaoHieuLenh extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_bien_bao_hieu_lenh,container,false);
+        mRootView = inflater.inflate(R.layout.header_bienbaohieulenh,container,false);
         return mRootView;
     }
     @Override
