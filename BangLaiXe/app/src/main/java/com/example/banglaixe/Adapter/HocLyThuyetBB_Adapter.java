@@ -42,18 +42,29 @@ public class HocLyThuyetBB_Adapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) myContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(myLayout, null);
+//        LayoutInflater inflater = (LayoutInflater) myContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        convertView = inflater.inflate(myLayout, null);
+//
+//        TextView txtTenHocBB = (TextView) convertView.findViewById(R.id.textViewTenHocBB);
+//        txtTenHocBB.setText(arrayHocLToLT.get(position).TenHocBB);
+//
+//        ImageView imgHinh = (ImageView) convertView.findViewById(R.id.imageViewHocBB);
+//        imgHinh.setImageResource(arrayHocLToLT.get(position).Hinh);
+//
+//        TextView txtNoiDungHocBB = (TextView) convertView.findViewById(R.id.textViewNoiDungHocBB);
+//        txtNoiDungHocBB.setText(arrayHocLToLT.get(position).NoiDungHocBB);
+//
+//        return convertView;
+        View viewProduct;
+        if (convertView == null) {
+            viewProduct = View.inflate(parent.getContext(), R.layout.fragment_hoc_lt_knqt, null);
+        } else viewProduct = convertView;
 
-        TextView txtTenHocBB = (TextView) convertView.findViewById(R.id.textViewTenHocBB);
-        txtTenHocBB.setText(arrayHocLToLT.get(position).TenHocBB);
+        TextView txtTenHoc = (TextView) viewProduct.findViewById(R.id.textViewTenHocLT);
+        txtTenHoc.setText(arrayHocLToLT.get(position).TenHocBB);
 
-        ImageView imgHinh = (ImageView) convertView.findViewById(R.id.imageViewHocBB);
-        imgHinh.setImageResource(arrayHocLToLT.get(position).Hinh);
-
-        TextView txtNoiDungHocBB = (TextView) convertView.findViewById(R.id.textViewNoiDungHocBB);
-        txtNoiDungHocBB.setText(arrayHocLToLT.get(position).NoiDungHocBB);
-
-        return convertView;
+        TextView txtNoiDungHoc = (TextView) viewProduct.findViewById(R.id.textViewNoiDungHocLT);
+        txtNoiDungHoc.setText(arrayHocLToLT.get(position).NoiDungHocBB);
+        return viewProduct;
     }
 }

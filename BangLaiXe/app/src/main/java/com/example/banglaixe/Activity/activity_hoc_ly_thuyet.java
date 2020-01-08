@@ -16,13 +16,15 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.banglaixe.Fragment.FragmentHocLyThuyet_BB;
+import com.example.banglaixe.Fragment.FragmentHocLyThuyet_KNQT;
 import com.example.banglaixe.R;
 
 public class activity_hoc_ly_thuyet extends AppCompatActivity {
     ListView listView;
-    String Title[]= {"Khái niệm và quy tắc","Hệ thống biển báo đường bộ","Các thế sa hình","Văn hóa, đạo đức nghề nghiệp người lái xe"};
-    String Question[]= {"0/75 câu","0/35 câu","0/35 câu","0/5 câu",};
-    int Image[] = {R.drawable.gmail,R.drawable.cauhoisai,R.drawable.gmail,R.drawable.gmail};
+    String Title[]= {"Khái niệm và quy tắc","Hệ thống biển báo đường bộ","Văn hóa, đạo đức nghề nghiệp người lái xe"};
+    String Question[]= {"","",""};
+    int Image[] = {R.drawable.book,R.drawable.bienbao,R.drawable.cauhoisai};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,17 @@ public class activity_hoc_ly_thuyet extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(activity_hoc_ly_thuyet.this , Activity_ThiSatHach.class);
+                if(position==0){
+                    Intent intent = new Intent(activity_hoc_ly_thuyet.this , Activity_HocLyThuyet_KNQT.class);
+                    startActivity(intent);
+                }else if(position==1){
+                    Intent intent = new Intent(activity_hoc_ly_thuyet.this , Activity_HocLyThuyet_BB.class);
+                    startActivity(intent);
+                }else if(position==2){
+                    Intent intent = new Intent(activity_hoc_ly_thuyet.this , Activity_HocLyThuyet_VH.class);
+                    startActivity(intent);
+                }
+
             }
         });
 

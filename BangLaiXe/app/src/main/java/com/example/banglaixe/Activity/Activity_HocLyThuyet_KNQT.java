@@ -1,14 +1,10 @@
-package com.example.banglaixe.Fragment;
+package com.example.banglaixe.Activity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ListView;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.example.banglaixe.Adapter.HocLyThuyetKNQT_Adapter;
 import com.example.banglaixe.Object.Hoc_LT_KNQT;
@@ -16,30 +12,22 @@ import com.example.banglaixe.R;
 
 import java.util.ArrayList;
 
-public class FragmentHocLyThuyet_KNQT extends Fragment {
-    private ListView lvHocLyThuyet;
-    private ArrayList<Hoc_LT_KNQT> mangHocLyThuyet;
+public class Activity_HocLyThuyet_KNQT extends AppCompatActivity {
+
 
     private View mRootView;
 
-    public FragmentHocLyThuyet_KNQT() {
+    public Activity_HocLyThuyet_KNQT() {
 
     }
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.list_hoc_lt_knqt,container,false);
-        return mRootView;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.list_hoc_lt_knqt);
 
 
-        lvHocLyThuyet = (ListView) getView().findViewById(R.id.listViewHocLT);
-        mangHocLyThuyet = new ArrayList<Hoc_LT_KNQT>();
+        ListView lvHocLyThuyet= findViewById(R.id.listViewHocLT);
+        ArrayList<Hoc_LT_KNQT> mangHocLyThuyet = new ArrayList<>();
 
         mangHocLyThuyet.add(new Hoc_LT_KNQT("Câu 1 : Khái niệm “phần đường xe chạy” được hiểu như thế nào là đúng?", "\"1- Là phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại.\n" +
                 "2- Là phần đường bộ được sử dụng cho các phương tiện giao thông qua lại, dải đất dọc hai bên đường để\n" +
@@ -151,11 +139,11 @@ public class FragmentHocLyThuyet_KNQT extends Fragment {
                 "phải\"\n" +
                 "Đáp án 1.\n"));
 
-
-        HocLyThuyetKNQT_Adapter adapter = new HocLyThuyetKNQT_Adapter(
-                getActivity(),
+        HocLyThuyetKNQT_Adapter asd = new HocLyThuyetKNQT_Adapter(
+                Activity_HocLyThuyet_KNQT.this,
                 mangHocLyThuyet
         );
-        lvHocLyThuyet.setAdapter(adapter);
+        lvHocLyThuyet.setAdapter(asd);
     }
+
 }

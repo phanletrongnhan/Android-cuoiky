@@ -1,75 +1,107 @@
 package com.example.banglaixe.Activity;
 
-import android.content.Context;
+import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
+import com.example.banglaixe.Object.Category;
 import com.example.banglaixe.R;
-import com.example.banglaixe.Tubycastu.ThiSatHachD1;
+import com.example.banglaixe.Tubycastu.SatHachDbHelper;
+
+
+import java.util.List;
 
 public class Activity_ThiSatHach extends AppCompatActivity {
-    ListView listView;
-    String Title[]= {"Đề 1","Đề 2","Đề 3"};
-    String Question[]= {"0/15 câu","0/15 câu","0/15 câu"};
 
+
+    private static final int RequestCodeQuestion = 1;
+    public static final String CATEGORY_ID = "categoryID";
+    public static final String CATEGORY_NAME = "categoryNAME";
+
+    public static final String SHARED_PREF = "Chia sẻ trước";
+    public static final String KEY_HighScore = "Điểm cao hơn";
+
+    private TextView textViewHighScore;
+    private int highscore;
+
+    private Spinner categorySpinner;
+
+    //SharedPreferences sharedPref;
+    //Activity_ThiSatHach.myAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thi_sat_hach);
 
-        listView = findViewById(R.id.listView);
-        Activity_ThiSatHach.myAdapter adapter = new Activity_ThiSatHach.myAdapter(this, Title,Question);
-        listView.setAdapter(adapter);
+        categorySpinner = findViewById(R.id.spinner_category);
+        textViewHighScore = findViewById(R.id.txtHighscore);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        loadCategory();
+        loadHighScore();
+
+        Button btnStartQuestion = findViewById(R.id.btnStart);
+        btnStartQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(Activity_ThiSatHach.this , ThiSatHachD1.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                Category selectedCategory = (Category) categorySpinner.getSelectedItem();
+                int categoryID = selectedCategory.getId();
+                String categoryNAME = selectedCategory.getName();
+                Intent intent = new Intent(Activity_ThiSatHach.this , DeThiSatHach.class);
+                intent.putExtra(CATEGORY_ID,categoryID);
+                intent.putExtra(CATEGORY_NAME,categoryNAME);
+                startActivityForResult(intent, RequestCodeQuestion);
             }
         });
-
     }
-    class myAdapter extends ArrayAdapter<String> {
-        Context context;
-        String aTitle[];
-        String aQuestion[];
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-        myAdapter(Context c ,String title[], String question[]){
-            super(c,R.layout.list_hoc_ly_thuyet,R.id.title,title);
-            this.context= c;
-            this.aTitle =title;
-            this.aQuestion = question;
-
-
+        if(requestCode == RequestCodeQuestion){
+            if(requestCode == RESULT_OK){
+                int score = data.getIntExtra(DeThiSatHach.EXTRA_SCORE , 0);
+                if(score > highscore){
+                    updateHighScore(score);
+                }
+            }
         }
+    }
 
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.list_cau_hoi, parent, false);
-            TextView myTitle = row.findViewById(R.id.title);
-            TextView myQuestion = row.findViewById(R.id.question);
+    private void loadCategory(){
+        SatHachDbHelper dbHelper = SatHachDbHelper.getInstance(this);
+        List<Category> categories = dbHelper.getAllCategories();
 
+        ArrayAdapter<Category> adapterCategories = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, categories);
+        adapterCategories.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(adapterCategories);
+    }
 
-            myTitle.setText(Title[position]);
-            myQuestion.setText(Question[position]);
+    private void loadHighScore(){
+        SharedPreferences pref = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+        highscore = pref.getInt(KEY_HighScore,0);
+        textViewHighScore.setText("Điểm cao : " +highscore);
+    }
+    private void updateHighScore(int highScoreNew){
+        highscore= highScoreNew;
+        textViewHighScore.setText("Điểm cao : "+ highscore);
 
-
-            return row;
-        }
+        SharedPreferences pref = getSharedPreferences(SHARED_PREF , MODE_PRIVATE);
+        SharedPreferences.Editor editor =pref.edit();
+        editor.putInt(KEY_HighScore, highscore);
+        editor.apply();
     }
 }

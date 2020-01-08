@@ -37,4 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void TT_Click(View view){
+        Intent intent = new Intent(MainActivity.this, Activity_ThongTin.class);
+
+        startActivity(intent);
+    }
 }

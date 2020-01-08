@@ -41,14 +41,16 @@ public class HocLyThuyetVH_Adapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) myContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(myLayout, null);
+        View viewProduct;
+        if (convertView == null) {
+            viewProduct = View.inflate(parent.getContext(), R.layout.fragment_hoc_lt_knqt, null);
+        } else viewProduct = convertView;
 
-        TextView txtTenHocVH = (TextView) convertView.findViewById(R.id.textViewTenHocVH);
-        txtTenHocVH.setText(arrayHocLToLT.get(position).TenHocVH);
+        TextView txtTenHoc = (TextView) viewProduct.findViewById(R.id.textViewTenHocLT);
+        txtTenHoc.setText(arrayHocLToLT.get(position).TenHocVH);
 
-        TextView txtNoiDungHocVH = (TextView) convertView.findViewById(R.id.textViewNoiDungHocVH);
-        txtNoiDungHocVH.setText(arrayHocLToLT.get(position).NoiDungVH);
-        return convertView;
+        TextView txtNoiDungHoc = (TextView) viewProduct.findViewById(R.id.textViewNoiDungHocLT);
+        txtNoiDungHoc.setText(arrayHocLToLT.get(position).NoiDungVH);
+        return viewProduct;
     }
 }
